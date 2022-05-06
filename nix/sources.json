@@ -1,0 +1,38 @@
+{
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "945aa20cd077a8eccb1c42e29f225370b9a8d78b",
+        "sha256": "0qx94wvmaplagiwmrh558iwwr7nhvini40qmlx21myc66z51if32",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/945aa20cd077a8eccb1c42e29f225370b9a8d78b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "master",
+        "description": "Nix Packages collection",
+        "homepage": "",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "bb074513be0ca2abfd48481af855d10311db370d",
+        "sha256": "02z10c1y6885pscpmp96f7vvk6bxrxzjs21rk5lfsrf58pw9f6gs",
+        "type": "tarball",
+        "url": "https://github.com/nixos/nixpkgs/archive/bb074513be0ca2abfd48481af855d10311db370d.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "opam2nix": {
+        "branch": "v1",
+        "description": "Generate nix expressions from opam packages",
+        "homepage": null,
+        "owner": "timbertson",
+        "repo": "opam2nix",
+        "rev": "7f2f20f8e499b948f35c72b95ce54e050767ce02",
+        "sha256": "1bsxv4ych1318a7n4hiwv6isj1dc6a7x7f8r13w53zxbgbzmjjx6",
+        "type": "tarball",
+        "url": "https://github.com/timbertson/opam2nix/archive/7f2f20f8e499b948f35c72b95ce54e050767ce02.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}

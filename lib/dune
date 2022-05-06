@@ -1,0 +1,4 @@
+(library
+ (name lib)
+ (public_name it-is-test.lib)
+ (libraries lwt.unix))
