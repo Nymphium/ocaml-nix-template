@@ -1,18 +1,12 @@
-{ pkgs, lib, fetchFromGitHub, ocamlPackages }:
+{ pkgs, lib, ocamlPackages, additionalTestPackages ? [ ]
+, additionalDevPackages ? [ ] }:
 let
-  opam2nix = pkgs.callPackage ./opam2nix.nix {
-    ocamlPackagesOverride = ocamlPackages;
-  };
+  opamContents = pkgs.callPackage ./opamContents.nix { };
 
-  src = pkgs.nix-gitignore.gitignoreSource [] ../.;
+  opam2nix =
+    pkgs.callPackage ./opam2nix.nix { ocamlPackagesOverride = ocamlPackages; };
 
-  localPackages =
-    let contents = builtins.attrNames (builtins.readDir ../.);
-    in builtins.filter (lib.strings.hasSuffix ".opam") contents;
-
-  # package names with {with-test} in opam;
-  # opam2nix does not support the flag at present.
-  testPackages = [ "ppx_inline_test" ];
+  src = pkgs.nix-gitignore.gitignoreSource [ ] ../.;
 
   args = {
     ocaml = ocamlPackages.ocaml;
@@ -21,8 +15,6 @@ let
   };
 
   opam = opam2nix.build args;
-  resolve = opam2nix.resolve args (localPackages ++ testPackages);
-in
-{
-  inherit opam resolve;
-}
+  resolve = opam2nix.resolve args
+    (with opamContents; localPackages ++ testPackages ++ devPackages);
+in { inherit opam resolve; }

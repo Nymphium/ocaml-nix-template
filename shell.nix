@@ -1,6 +1,7 @@
 let
   pkgs = import ./nix/pkgs.nix;
   ocamlPackages = pkgs.callPackage ./nix/ocamlPackages.nix {};
+
   opam = (pkgs.callPackage ./. { inherit ocamlPackages; }).opam;
 
   niv = import ./nix/niv.nix;
@@ -11,5 +12,6 @@ opam.it-is-test.overrideAttrs (_: {
     ocamlPackages.ocaml-lsp
     ocamlPackages.utop
     ocamlformat
+    pkgs.nixfmt
   ];
 })
