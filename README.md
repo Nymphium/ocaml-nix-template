@@ -1,3 +1,8 @@
+Archived: Use [flake-templates#ocaml](https://github.com/nymphium/flake-templates)
+===
+
+---
+
 OCaml + [Nix](https://nixos.org/manual/nixpkgs/stable/) template
 ===
 
